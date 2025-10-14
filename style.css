@@ -1,0 +1,246 @@
+/* Barra de navegación general */
+.menu {
+  background-color:#2A3536;
+  /* Fondo oscuro para la barra */
+  padding: 0;
+  /* Sin relleno */
+  margin: 0;
+  /* Sin margen */
+  /*https://getcssscan.com/css-box-shadow-examples*/
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+  font-family:sans-serif;
+  
+}
+#caja-logo{
+    display: flex;
+    justify-content: center;
+}
+#logo{
+    width: 230px;
+    height: 150px;
+    text-align: center;
+}
+
+.carousel-item img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      object-position: center;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.7); /* fondo semitransparente */
+  border-radius: 50%;                   /* hace el fondo redondeado */
+  padding: 25px;                        /* agranda el círculo */
+  background-size: 50% 50%;             /* ajusta el tamaño del ícono */
+  transition: background-color 0.3s ease;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: rgba(0, 0, 0, 1); /* más oscuro al pasar el mouse */
+}
+
+/* Lista principal de menú */
+.menu ul {
+  list-style: none;
+  /* Sin viñetas */
+  padding: 0;
+  /* Quitar relleno */
+  margin: 0;
+  /* Quitar margen */
+  display: flex;
+  justify-content: space-around;
+  /* Elementos en línea */
+}
+
+/* Elementos de la lista principal */
+/*selecciona todos los elementos <li> que son hijos directos de un <ul>, y ese <ul> es hijo directo del elemento con clase .menu.*/
+.menu>ul>li {
+  position: relative;
+  /* Para posicionar el submenu absoluto */
+}
+
+/* Enlaces principales */
+.menu a {
+  display: block;
+  /* Ocupa toda el área del enlace */
+  padding: 15px 25px;
+  /* Espaciado cómodo */
+  color: white;
+  /* Texto blanco */
+  text-decoration: none;
+  /* Quitar subrayado */
+  font-weight: bold;
+  /* Texto en negrita */
+  transition: background-color 0.3s, color 0.3s;
+  /* Transición suave de colores */
+}
+
+/* Efecto al pasar el ratón sobre enlaces */
+.menu a:hover {
+  background-color: lightslategray;
+  /* Fondo naranja al hacer hover */
+  color: whitesmoke;
+  border-radius: 10px;
+  text-decoration: underline;
+  
+}
+
+/* Estilo del submenu oculto inicialmente */
+.submenu {
+  position: absolute;
+  /* Posición relativa al padre */
+  top: 100%;
+  /* Justo debajo del elemento padre */
+  left: 0;
+  /* Alineado a la izquierda */
+  background-color: #2A3536;
+  /* Fondo más claro que el menú padre */
+  padding: 0;
+  /* Sin relleno */
+  margin: 0;
+  /* Sin margen */
+  list-style: none;
+  /* Sin viñetas */
+  min-width: 180px;
+  /* Ancho mínimo */
+  opacity: 0;
+  /* Oculto inicialmente (transparente) */
+  visibility: hidden;
+  /* No es visible para interacciones */
+  transform: translateY(-10px);
+  /* Posición ligeramente arriba */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  /* Transición animada */
+  border-radius: 0 0 6px 6px;
+  /* Bordes redondeados abajo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Sombra para distinguir */
+  z-index: 10;
+  /* Para que aparezca sobre otros elementos */
+  display: flex;
+  /* Se asegura que esté en bloque para lista vertical */
+}
+
+/* Mostrar el submenu cuando se pasa el ratón por el padre */
+.menu li:hover>.submenu {
+  opacity: 1;
+  /* Opacidad total */
+  visibility: visible;
+  /* Visible */
+  transform: translateY(0);
+  /* Posición original */
+}
+
+/* Ítems de submenu */
+.submenu li a {
+  padding: 12px 20px;
+  /* Espaciado interno */
+  font-weight: normal;
+  /* Texto normal */
+  color: #eee;
+  /* Color claro */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  /* Línea divisoria */
+}
+
+/* Último ítem sin borde */
+.submenu li:last-child a {
+  border-bottom: none;
+  /* Sin línea final */
+}
+
+/* Hover en enlaces del submenu */
+.submenu li a:hover {
+  background-color: lightslategray;
+  /* Fondo naranja */
+  color: white;
+  /* Texto oscuro */
+  transition: background-color 0.25s ease;
+  /* Transición suave */
+}
+
+.contenedor{
+  display: flex;
+  justify-content: space-around;
+}
+.profesor{
+  margin:70px;
+  border-radius: 12px;
+  box-shadow: 7px 9px 6px 5px grey;
+}
+.parrafo{
+  background-color: #2A3536;
+  color: white;
+  margin: 70px;
+  border-radius: 50px;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow:  10px 8px 4px black;
+}
+
+.parrafo {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+footer {
+  background-color: #2A3536; /* Fondo oscuro */
+  display: flex;
+  color: #fff; /* Texto en blanco */
+  text-align: center; /* Centra el texto */
+  padding: 10px 0; /* Espaciado superior e inferior */
+  font-size: 0.95em; /* Tamaño de texto del footer */
+  margin-top: 40px; /* Espacio arriba del footer */
+}
+
+footer a {
+  color: #87ceeb; /* Color de enlaces en el footer */
+  text-decoration: underline; /* Subrayado */
+}
+
+#parte1{
+  margin: auto;
+  vertical-align: auto;
+}
+
+#parte2{
+  margin-top: -20px;
+  margin: auto;
+  vertical-align: auto;
+  
+}
+
+#parte3{
+  margin: auto;
+  vertical-align: auto;
+  text-align: center;
+  margin: auto;
+  padding: 5px;
+}
+
+#imagen{
+  width: 50px;
+  height: 50px;
+}
+
+input{
+  border-radius: 5px;
+  border: 2px solid #333;
+  padding: 3px;
+}
+
+button{
+  margin-top: 5px;
+}
+fieldset{
+  color: white;
+}
+
